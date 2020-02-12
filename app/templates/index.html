@@ -1,9 +1,33 @@
 <html>
   <head>
     <title>{{ title }} - A Toy GIS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.0/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.0/build/ol.js"></script>
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
   </head>
 
   <body>
-    <h1> toy gis! </h1>
+    <h1>toy gis!</h1>
+    <div id="map" class="map"></div>
   </body>
+
+  <script>
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([37.41, 8.82]),
+        zoom: 4
+      })
+    });
+  </script>
 </html>
