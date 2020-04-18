@@ -3,6 +3,12 @@ var map = new ol.Map({
     layers: [
         new ol.layer.Tile({
             source: new ol.source.OSM()
+        }),
+        new ol.layer.Vector({
+            source: new ol.source.Vector({
+                url: '/api',
+                format: new ol.format.GeoJSON()
+            })
         })
     ],
     view: new ol.View({
