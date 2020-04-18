@@ -8,6 +8,13 @@ var gis = (function() {
                     color: 'red',
                     width: 1
                 })
+            }),
+            text: new ol.style.Text({
+                font: '11px "sans-serif"',
+                text: 'test',
+                stroke: new ol.style.Stroke({
+                    color: 'black'
+                })
             })
         })
     }
