@@ -16,9 +16,9 @@ def serve_wifi():
         features = json.load(f)
     return features
 
-@app.route('/api/counties')
+@app.route('/api/districts')
 def serve_counties():
     features = {}
-    with open('data/counties.topojson', 'r') as f:
+    with open('data/districts.topojson', 'r') as f:
         features = json.load(f)
     return features

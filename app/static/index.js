@@ -27,7 +27,7 @@ var gis = (function() {
             }),
             new ol.layer.Vector({
                 source: new ol.source.Vector({
-                    url: '/api/counties',
+                    url: '/api/districts',
                     format: new ol.format.TopoJSON()
                 }),
             }),
