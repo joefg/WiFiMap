@@ -27,7 +27,13 @@ var gis = (function() {
             }),
             new ol.layer.Vector({
                 source: new ol.source.Vector({
-                    url: '/api',
+                    url: '/api/counties',
+                    format: new ol.format.TopoJSON()
+                }),
+            }),
+            new ol.layer.Vector({
+                source: new ol.source.Vector({
+                    url: '/api/wifi',
                     format: new ol.format.GeoJSON()
                 }),
                 style: styles['Point']
