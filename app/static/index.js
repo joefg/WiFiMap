@@ -1,8 +1,8 @@
 var gis = (function() {
-
-    var generate_text_style = function(feature, key){
+    var generate_text_style = function(feature, resolution, key){
+        let font_size = 10 / resolution;
         return new ol.style.Text({
-            font: '11px "sans-serif"',
+            font: font_size + 'px "sans-serif"',
             text: feature.get(key),
             stroke: new ol.style.Stroke({
                 color: 'black'
@@ -21,7 +21,7 @@ var gis = (function() {
                         width: 1
                     })
                 }),
-                text: generate_text_style(feature, 'Site Name')
+                text: generate_text_style(feature, resolution, 'Site Name')
             })
         }
     };
