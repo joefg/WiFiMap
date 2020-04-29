@@ -7,7 +7,7 @@ from app import app
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='jfg-gis')
+    return render_template('index.html', title='Cambs WiFi Map')
 
 @app.route('/api/wifi')
 def serve_wifi():
