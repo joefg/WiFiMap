@@ -1,22 +1,29 @@
 var gis = (function() {
-    var styles = {
-        'Point' : new ol.style.Style({
-            image: new ol.style.Circle({
-                radius: 5,
-                fill: null,
-                stroke: new ol.style.Stroke({
-                    color: 'red',
-                    width: 1
-                })
-            }),
-            text: new ol.style.Text({
-                font: '11px "sans-serif"',
-                text: 'test',
-                stroke: new ol.style.Stroke({
-                    color: 'black'
-                })
+
+    var generate_text_style = function(feature, key){
+        return new ol.style.Text({
+            font: '11px "sans-serif"',
+            text: feature.get(key),
+            stroke: new ol.style.Stroke({
+                color: 'black'
             })
         })
+    };
+
+    var styles = {
+        'Point' : function(feature, resolution) {
+            return new ol.style.Style({
+                image: new ol.style.Circle({
+                    radius: 5,
+                    fill: null,
+                    stroke: new ol.style.Stroke({
+                        color: 'red',
+                        width: 1
+                    })
+                }),
+                text: generate_text_style(feature, 'Site Name')
+            })
+        }
     };
 
     var view = new ol.View({
