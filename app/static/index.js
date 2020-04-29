@@ -17,7 +17,12 @@ var gis = (function() {
                 })
             })
         })
-    }
+    };
+
+    var view = new ol.View({
+        center: ol.proj.fromLonLat([0.04434399079215103,52.30404830548494]),
+        zoom: 9
+    });
 
     var map = new ol.Map({
         target: 'map',
@@ -39,13 +44,11 @@ var gis = (function() {
                 style: styles['Point']
             })
         ],
-        view: new ol.View({
-            center: ol.proj.fromLonLat([37.41, 8.82]),
-            zoom: 4
-        })
-    })
+        view: view
+    });
 
     return {
-        map : map
+        map : map,
+        view : view
     }
 })();
