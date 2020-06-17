@@ -39,13 +39,13 @@ var gis = (function() {
             }),
             new ol.layer.Vector({
                 source: new ol.source.Vector({
-                    url: '/api/districts',
+                    url: '/gis/api/districts',
                     format: new ol.format.TopoJSON()
                 }),
             }),
             new ol.layer.Vector({
                 source: new ol.source.Vector({
-                    url: '/api/wifi',
+                    url: '/gis/api/wifi',
                     format: new ol.format.GeoJSON()
                 }),
                 style: styles['Point']

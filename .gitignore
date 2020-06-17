@@ -1,4 +1,9 @@
+# ignore working venv
 venv
+
+# ignore bytecode
 *.pyc
-*.geojson
-*.topojson
+instance
+
+# ignore data
+data/

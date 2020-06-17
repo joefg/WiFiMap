@@ -1,22 +1,26 @@
 import json
+import functools
 
-from flask import render_template
+from flask import (
+    Blueprint, flash, g, redirect, render_template, request, session, url_for
+)
+from werkzeug.security import check_password_hash, generate_password_hash
 
-from app import app
+bp = Blueprint('gis', __name__, url_prefix='/gis')
 
-@app.route('/')
-@app.route('/index')
+@bp.route('/')
+@bp.route('/index')
 def index():
     return render_template('index.html', title='Cambs WiFi Map')
 
-@app.route('/api/wifi')
+@bp.route('/api/wifi')
 def serve_wifi():
     features = {}
     with open('data/wifi.geojson', 'r') as f:
         features = json.load(f)
     return features
 
-@app.route('/api/districts')
+@bp.route('/api/districts')
 def serve_counties():
     features = {}
     with open('data/districts.topojson', 'r') as f:
