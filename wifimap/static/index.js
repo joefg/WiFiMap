@@ -40,7 +40,7 @@ var gis = (function() {
             new ol.layer.Vector({
                 source: new ol.source.Vector({
                     url: '/gis/api/districts',
-                    format: new ol.format.TopoJSON()
+                    format: new ol.format.GeoJSON()
                 }),
             }),
             new ol.layer.Vector({
