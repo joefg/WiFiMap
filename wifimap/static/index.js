@@ -1,7 +1,7 @@
 var gis = (function() {
     var district_style = new ol.style.Style({
         fill: new ol.style.Fill({
-            color: 'rgba(255, 255, 255, 0.05)'
+            color: 'rgba(255, 255, 255, 0.25)'
         }),
         stroke: new ol.style.Stroke({
             color: '#319FD3',
@@ -20,22 +20,15 @@ var gis = (function() {
     }); 
 
     var hotspot_style = new ol.style.Style({
-        fill: new ol.style.Fill({
-            color: 'rgba(255, 255, 255, 1)'
-        }),
-        stroke: new ol.style.Stroke({
-            color: '#FFFFFF',
-            width: 1
-        }),
-        text: new ol.style.Text({
-            font: '12px Calibri,sans-serif',
+        image: new ol.style.Circle({
             fill: new ol.style.Fill({
-                color: '#000'
+                color: 'rgba(0, 0, 128, 0.5)'
             }),
             stroke: new ol.style.Stroke({
-                color: '#fff',
+                color: 'rgba(0, 0, 128, 1)',
                 width: 3
-            })
+            }),
+            radius: 5
         })
     }); 
 
@@ -70,7 +63,8 @@ var gis = (function() {
                 source: new ol.source.Vector({
                     url: '/gis/api/wifi',
                     format: new ol.format.GeoJSON()
-                })
+                }),
+                style: hotspot_style
             })
         ],
         view: view,
