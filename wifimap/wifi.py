@@ -13,7 +13,7 @@ bp = Blueprint('gis', __name__, url_prefix='/gis')
 @bp.route('/')
 @bp.route('/index')
 def index():
-    return render_template('index.html', title='Cambs WiFi Map')
+    return render_template('index.html', title='Cambridgeshire WiFi Map')
 
 @bp.route('/api/wifi')
 def serve_wifi():
