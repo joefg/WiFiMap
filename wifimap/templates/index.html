@@ -2,19 +2,20 @@
   <head>
     <title>{{ title }}</title>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
  </head>
 
   <body>
-    <nav class="navbar navbar-dark bg-dark shadow">
+    <nav class="navbar navbar-dark bg-dark shadow navbar-fixed-top">
       <a class="navbar-brand" href="#">{{ title }}</a>
+      <span class="navbar-text">made with <3 by joefg</span>
     </nav>
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span">
-          <div id="map" class="map"></div>
+          <div id="map" class="olMap"></div>
           <div id="popup" class="ol-popup">
             <a href="#" id="popup-closer" class="ol-popup-closer"></a>
             <div id="popup-content">

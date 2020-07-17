@@ -1,3 +1,10 @@
+.olMap {
+    z-index: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: default;
+    height: 90%;
+}
 .ol-popup {
     position: absolute;
     background-color: white;
