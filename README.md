@@ -3,7 +3,8 @@ This is a toy GIS application. It shows free council-provided WiFi hotspots in C
 
 ## Dependencies
 * Python 3; (contained in requirements.txt)
-* Sqlite3 and Spatialite.
+* Sqlite3 and Spatialite;
+* `ogr2ogr` (for converting a geojson and topojson to sqlite)
 
 ## Deployment
 ```
